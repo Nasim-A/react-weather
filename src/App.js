@@ -32,9 +32,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="app">
 
-        <div className='search-container'>
+        <div className='search'>
             <input
             type='text'
             className='search-box'

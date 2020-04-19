@@ -14,7 +14,7 @@ class Weather extends Component {
         const weatherDaily = data.list.filter(weather => weather.dt_txt.includes('12:00:00'))
         this.setState({
             weatherDaily: weatherDaily
-        }, () => console.log(this.state))
+        })
         })
     }
 
