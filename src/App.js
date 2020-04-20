@@ -25,7 +25,6 @@ class App extends Component {
               .then(result => {
                   this.setState({ weather: result });
                   this.setState({ location: '' });
-                  console.log(result);
               });
       }
   }
