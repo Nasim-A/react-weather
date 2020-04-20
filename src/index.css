@@ -7,10 +7,13 @@ body{
 .app {
   color: azure;
   height: 100%;
+  transition: 0.4s ease-out;
 }
 
 .weather {
   min-height: 80vh;
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .card{
@@ -62,4 +65,78 @@ body{
   .week {
     flex-direction: column;
   }
+}
+
+/* Backgrounds */
+
+/* Clear sky day */
+.weather01d {
+  background: url(https://images.unsplash.com/reserve/jEs6K0y1SbK3DAvgrBe5_IMG_3410.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Clear sky night */
+.weather01n {
+  background: url(https://images.unsplash.com/photo-1554825123-84862ad084af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1235&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Clouds day */
+.weather02d, .weather03d, .weather04d {
+  background: url(https://images.unsplash.com/photo-1509803874385-db7c23652552?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Clouds night */
+.weather02n, .weather03n, .weather04n {
+  background: url(https://images.unsplash.com/photo-1479156661942-92cd989cdb56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Rain day */
+.weather09d, .weather10d {
+  background: url(https://images.unsplash.com/photo-1528402520525-05f8b9608a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Rain night */
+.weather09n, .weather10n {
+  background: url(https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1275&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Thunder */
+.weather11d, .weather11n {
+  background: url(https://images.unsplash.com/photo-1537210249814-b9a10a161ae4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Snow */
+.weather13d, .weather13n {
+  background: url(https://images.unsplash.com/photo-1542601098-8fc114e148e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Mist */
+.weather50d, .weather50n {
+  background: url(https://images.unsplash.com/photo-1478399305562-fbc9c0adb0e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

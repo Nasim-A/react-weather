@@ -51,7 +51,7 @@ class App extends Component {
             ? <div className='card pt-3 weather'><h1>Could not find location</h1></div>
             : (
               <React.Fragment>
-                <div className='card pt-3 weather'>
+                <div className={`card pt-3 weather weather${this.state.weather.weather[0].icon}`}>
                     <h1>{this.state.weather.name}, {this.state.weather.sys.country}</h1>
                     <h2 className='temperature'>{Math.round(this.state.weather.main.temp)}°C</h2>
                     <img src={`https://openweathermap.org/img/w/${this.state.weather.weather[0].icon}.png`} alt='Weather Icon' className='icon'/>
