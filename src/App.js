@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   getWeather = (e) => {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' && this.state.location !== '') {
           fetch(`${api.base}weather?q=${this.state.location}&units=metric&APPID=${api.key}`)
               .then(res => res.json())
               .then(result => {
@@ -32,33 +32,34 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-
-        <div className='search'>
-            <input
-            type='text'
-            className='search-box'
+      <div className="container text-center align-middle app">
+        <div className="input-group mb-3 mt-3 search">
+          <input
+            type="text"
+            className="search-box form-control shadow p-3 mb-5 bg-white rounded"
+            aria-label="Your Location"
             placeholder='Enter Location'
             onChange={this.handleChange}
             value={this.state.location}
             onKeyPress={this.getWeather}
-            />
+          />
         </div>
-
+        
         { this.state.weather === null
-          ? <h1>Enter your location</h1>
+          ? <div className='card pt-3 weather'><h1>Enter your location</h1></div>
           : this.state.weather.cod === '404'
-            ? <h1>Could not find location</h1>
+            ? <div className='card pt-3 weather'><h1>Could not find location</h1></div>
             : (
               <React.Fragment>
-                <div className='card'>
+                <div className='card pt-3 weather'>
                     <h1>{this.state.weather.name}, {this.state.weather.sys.country}</h1>
-                    <h2>{Math.round(this.state.weather.main.temp)}°C</h2>
-                    <img src={`https://openweathermap.org/img/w/${this.state.weather.weather[0].icon}.png`} alt='Weather Icon'/>
-                    <p>{this.state.weather.weather[0].description}</p>
-                    <p>Wind Speed: {Math.round(this.state.weather.wind.speed)} MPH</p>
+                    <h2 className='temperature'>{Math.round(this.state.weather.main.temp)}°C</h2>
+                    <img src={`https://openweathermap.org/img/w/${this.state.weather.weather[0].icon}.png`} alt='Weather Icon' className='icon'/>
+                    <p className='text-uppercase'>{this.state.weather.weather[0].description}</p>
+                    <p>{Math.round(this.state.weather.wind.speed)} MPH</p>
+
+                    <Weather api={api} location={this.state.location}/>
                 </div>
-                <Weather api={api} location={this.state.location}/>
               </React.Fragment>
               
             )

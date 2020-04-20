@@ -6,15 +6,15 @@ const Card = ({ weather }) => {
 
     var date = new Date()
     date.setTime(weather.dt * 1000)
-    date = moment(date).format('dddd')
+    date = moment(date).format('ddd')
 
     return (
-        <div className='card'>
-            <h1>{date}</h1>
-            <h2>{Math.round(weather.main.temp)}°C</h2>
-            <img src={icon} alt='Weather Icon'/>
-            <p>{weather.weather[0].description}</p>
-            <p>Wind Speed: {Math.round(weather.wind.speed)} MPH</p>
+        <div className='col-md-auto card day'>
+            <h1>{date}</h1><br/>
+            <p>{Math.round(weather.main.temp)}°C</p>
+            <img src={icon} alt='Weather Icon' className='icon mb-3'/>
+            <p className='text-uppercase'>{weather.weather[0].description}</p>
+            <p>{Math.round(weather.wind.speed)}MPH</p>
         </div>
     )
   }

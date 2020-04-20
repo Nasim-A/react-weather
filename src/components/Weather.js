@@ -24,7 +24,7 @@ class Weather extends Component {
 
     render() {
         return (
-            <div className='card-list'>{ this.getWeek() }</div>
+            <div className='row week'>{ this.getWeek() }</div>
         )
     }
 }
